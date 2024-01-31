@@ -1,6 +1,7 @@
 ﻿using FastEndpoints;
 using Mapster;
 using Mediator;
+using Microsoft.EntityFrameworkCore;
 using RKM_API.Entity;
 
 namespace RKM_API.Domain.Siswa.CreateSiswa;

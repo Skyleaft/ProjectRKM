@@ -9,7 +9,12 @@ public class CreateSiswaValidator: Validator<CreateSiswaRequest>
     {
         RuleFor(x => x.Nama)
             .NotEmpty()
-            .MaximumLength(35)
-            .MinimumLength(3);
+            .MaximumLength(60)
+            .MinimumLength(2);
+        RuleFor(x => x.NIS).NotEmpty();
+        RuleFor(x => x.TempatLahirId).NotNull();
+        RuleFor(x => x.JenisKelamin).NotNull();
+        RuleFor(x => x.Agama).NotNull();
+        RuleFor(x => x.Alamat).NotNull();
     }
 }
