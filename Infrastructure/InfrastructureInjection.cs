@@ -2,22 +2,25 @@
 using Mediator;
 using Microsoft.AspNetCore.Builder;
 using FastEndpoints;
+using RKM.Infrastructure.Data;
 
-namespace Infrastructure;
+namespace RKM.Infrastructure;
 public static class InfrastructureInjection
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection Services)
     {
         //Mediator
-        //services.AddMediator(options =>
+        //Services.AddMediator(options =>
         //{
         //    options.Namespace = "Mzstudio.Infrastructure";
         //    options.ServiceLifetime = ServiceLifetime.Transient;
         //});
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        Services.AddTransient<GenericRepository>();
 
-        services.AddFastEndpoints();
+        Services.AddFastEndpoints();
 
-        return services;
+        return Services;
     }
 
     public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
