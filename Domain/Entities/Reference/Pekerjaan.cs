@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RKM.Domain.Entities.Reference;
@@ -15,7 +14,6 @@ public class Pekerjaan
         Kategori = kategori;
     }
     public Pekerjaan() { }
-
     public int Id { get; set; }
     public string NamaPekerjaan { get; set; }
     public string Kategori { get; set; }
