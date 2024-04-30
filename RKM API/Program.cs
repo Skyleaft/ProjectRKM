@@ -1,5 +1,6 @@
 using FastEndpoints.Security;
 using Microsoft.AspNetCore.Http.Json;
+using Microsoft.EntityFrameworkCore;
 using RKM.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ builder.AddServiceDefaults();
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddTransient<GenericRepository>();
-builder.AddNpgsqlDbContext<GenericRepository>("postgresdb");
+builder.AddNpgsqlDbContext<GenericRepository>("myLocal");
 builder
     .Services
     .AddAuthenticationJwtBearer(o => o.SigningKey = builder.Configuration["Auth:SigningKey"])

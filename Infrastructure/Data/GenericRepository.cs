@@ -19,7 +19,7 @@ public class GenericRepository : DbContext
         //SQL Server Connection
         //options.UseSqlServer(Configuration.GetConnectionString("DefaultSQLCON"));
         //PGSQL Connection
-        //options.UseNpgsql(Configuration.GetConnectionString("PGSQLConnection"));
+        options.UseNpgsql(Configuration.GetConnectionString("myLocal"));
 
     }
 
