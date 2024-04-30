@@ -28,6 +28,8 @@
   <ItemGroup>
     <Folder Include="DomainEvents\DataOrangTua\" />
     <Folder Include="DomainEvents\DataWali\" />
+    <Folder Include="Features\DataSiswa\Delete\" />
+    <Folder Include="Features\DataSiswa\Single\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 
